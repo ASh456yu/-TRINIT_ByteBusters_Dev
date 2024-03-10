@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body style="margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-image: url('https://vitutors.com/wp-content/uploads/2020/07/start-earning.svg');
+background-size: 800px 600px;
+background-position: center;
+background-repeat: no-repeat;">
+
+
+  <div class="container" style="margin-top: 50px; width: 420px;
+  background: transparent ;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  padding: 30px 40px;">
+    <form method="get" action="" id="myForm">
+      <p id="p1" hidden>{{address}}</p>
+      <div id="emailHelp" class="form-text" style="color: aqua;">New Account? please sign up!!</div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="emailAdd">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="passUsr">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Sign In</button>
+      <a class="btn btn-primary" role="button" aria-disabled="false" id="myLink" href="/sup/"
+        style="margin-top: 10px;">Sign Up</a>
+    </form>
+
+  </div>
+  <script>
+    
+    var myLink = document.getElementById('myLink');
+    var address = document.getElementById('p1').innerText;
+
+    if (address == "Student") {
+      document.getElementById("myForm").action = '/ims/'
+      myLink.href = '/sup/?user=' + encodeURIComponent(address);
+    } else if (address == "Teacher") {
+      document.getElementById("myForm").action = '/imt/'
+      myLink.href = '/sup/?user=' + encodeURIComponent(address);
+    }
+    
+
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body style="
+margin: 0;
+padding: 0;
+background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSib6kGxQGk7bNwBTktsxwTa320JpMYbTCiXbJ0BEUgypMofQpdGLSrhVTg&s=10');
+background-size: cover;
+background-position: center;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+">
+    <form method="get" action="/mail/" id="myForm" style="width: 50%;">
+
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="emailAdd">
+            <label for="floatingInput">Your email address</label>
+        </div>
+        
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Dear Person" name="title">
+            <label for="floatingInput">Title</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="passUsr">
+            <label for="floatingPassword">Google 2-step Auth-Key</label>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px;margin-top: 10px;" name="Describ"></textarea>
+            <label for="floatingTextarea2">Description</label>
+          </div>
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Send</button>
+    </form>
+    <script>
+        
+        var myLink = document.getElementById('myLink');
+        var address = document.getElementById('p1').innerText;
+    
+        if (address == "Student") {
+          document.getElementById("myForm").action = '/ims/'
+          myLink.href = '/sup/?user=' + encodeURIComponent(address);
+        } else if (address == "Teacher") {
+          document.getElementById("myForm").action = '/imt/'
+          myLink.href = '/sup/?user=' + encodeURIComponent(address);
+        }
+        
+    
+      </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

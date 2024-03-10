@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Details</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #007bff;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+            width: 50%; /* Half of the page */
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .payment-methods ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .payment-methods li button {
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .payment-methods li:nth-child(1) button {
+            background-color: #007bff; /* Debit Card */
+            color: white;
+        }
+
+        .payment-methods li:nth-child(2) button {
+            background-color: #28a745; /* Credit Card */
+            color: white;
+        }
+
+        .payment-methods li:nth-child(3) button {
+            background-color: #ffc107; /* PayPal */
+            color: black;
+        }
+
+        .payment-methods li:nth-child(4) button {
+            background-color: #dc3545; /* UPI */
+            color: white;
+        }
+
+        .payment-details form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .payment-details label {
+            font-weight: bold;
+        }
+
+        .payment-details input {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .billing-summary ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .billing-summary li {
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        footer button:hover {
+            background-color: #0056b3; /* Change button color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Payment Details</h1>
+    </header>
+    <main>
+        <section class="payment-methods">
+            <h2>Payment Methods</h2>
+            <ul>
+                <li><button>Debit Card</button></li>
+                <li><button>Credit Card</button></li>
+                <li><button>PayPal</button></li>
+                <li><button>UPI</button></li>
+            </ul>
+        </section>
+        <section class="payment-details">
+            <h2>Payment Details</h2>
+            <form>
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" placeholder="** ** ** **">
+                <label for="postal-code">Postal Code</label>
+                <input type="text" id="postal-code" placeholder="01970">
+                <label for="expiration-date">Expiration Date</label>
+                <input type="text" id="expiration-date" placeholder="MM/YY">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="123">
+            </form>
+        </section>
+        <section class="billing-summary">
+            <h2>Billing Summary</h2>
+            <ul>
+                <li>Subtotal: {{price1}}</li>
+                <li>Yearly plan discount: -$84.00</li>
+                <li>Billed Now: USD {{price2}}</li>
+            </ul>
+            <p>All sales are charged in USD and all sales are final. You will be charged $60.00 USD immediately. You will be charged $60.00 USD every yearly thereafter while the subscription is active. Cancel any time.</p>
+        </section>
+    </main>
+    <footer>
+        <button>Subscribe & Checkout</button>
+    </footer>
+</body>
+</html>"

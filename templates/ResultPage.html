@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    .card {
+      margin-bottom: 20px;
+      /* Add space between cards */
+    }
+
+    /* Add border to each card */
+    .card {
+      border: 1px solid #dee2e6;
+      border-radius: .25rem;
+    }
+  </style>
+</head>
+
+<body style="
+background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyhheFFMzVT7i5v5xcLS4Xtk79-1DRN2IujDC3wBJXDHYob2ovvyu8su0&s=10');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;">
+
+  <p id="p2" hidden>{{filt1}}</p>
+  <p id="p3" hidden>{{filt2}}</p>
+  <p id="p4" hidden>{{filt3}}</p>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/notf/">Info Circulation</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        
+        <!-- Search System -->
+        <form class="d-flex" role="search">
+          <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Language
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="/filter/?filt1=all&filt2=all&filt3=all">all</a></li>
+                <li><a href="/filter/?filt1=English&filt2=all&filt3=all">English</a></li>
+                <li><a href="/filter/?filt1=Bengali&filt2=all&filt3=all">Bengali</a></li>
+                <li><a href="/filter/?filt1=Tamil&filt2=all&filt3=all">Tamil</a></li>
+                <li><a href="/filter/?filt1=Hindi&filt2=all&filt3=all">Hindi</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Experiance
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="/filter/?filt1=all&filt2=all&filt3=all">all</a></li>
+                <li><a href="/filter/?filt1=all&filt2=5&filt3=all">less than 5 years</a></li>
+                <li><a href="/filter/?filt1=all&filt2=10&filt3=all">5-10 years</a></li>
+                <li><a href="/filter/?filt1=all&filt2=15&filt3=all">10-15 years</a></li>
+                <li><a href="/filter/?filt1=all&filt2=20&filt3=all">15-20 years</a></li>
+                <li><a href="/filter/?filt1=all&filt2=25&filt3=all">20-25 years</a></li>
+              </ul>
+            </div>
+
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Pricing
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="/filter/?filt1=all&filt2=all&filt3=all">all</a></li>
+                <li><a href="/filter/?filt1=all&filt2=all&filt3=1000">less than 1000</a></li>
+                <li><a href="/filter/?filt1=all&filt2=all&filt3=2000">1000-2000</a></li>
+                <li><a href="/filter/?filt1=all&filt2=all&filt3=3000">2000-3000</a></li>
+                <li><a href="/filter/?filt1=all&filt2=all&filt3=4000">3000-4000</a></li>
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container" style="margin-top: 20px;" id="d5"></div>
+  <p id="JJJ"></p>
+  <p id="JJJ1"></p>
+  <script>
+    var vidID = '1';
+    function myFunction(name) {
+      var makeAnch = document.createElement("a");
+      var href = "/tProfile/?user=" + encodeURIComponent(name);
+      makeAnch.setAttribute("href", href);
+      document.body.appendChild(makeAnch);
+      makeAnch.click()
+      makeAnch.remove()
+    };
+    var idNo = 1;
+
+
+
+
+fetch('/api/data/')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // Assuming the server returns JSON data
+  })
+  .then(data => {
+    // Handle the data received from the server
+    console.log('Data from Python server:', data);
+    // document.getElementById("JJJ").innerText = data.length;
+    
+    var ind = 0;
+    for (let index = 0; index < data.length; index++) {
+      if (ind % 3 == 0) {
+        
+        idNo++;
+        
+        
+        var card_data = `<div class="card-group" id="c${idNo}"></div>`;
+        document.getElementById("d5").innerHTML += card_data;
+      }
+      if (document.getElementById("p2").innerText!="all" & document.getElementById("p2").innerText!=data[index].lan) {
+        continue;
+      }
+      if (document.getElementById("p3").innerText!="all") {
+        var st = document.getElementById("p3").innerText.split(":")
+        if(!(parseInt(data[index].experiance)>parseInt(st[0]) & parseInt(data[index].experiance)<parseInt(st[1]))){
+          continue;
+        }
+      }
+      if (document.getElementById("p4").innerText!="all") {
+        var st = document.getElementById("p4").innerText.split(":")
+        if(!(parseInt(data[index].price)>parseInt(st[0]) && parseInt(data[index].price)<parseInt(st[1]))){
+          continue;
+        }
+      }
+      ind+=1;
+      var newCardHtml = `
+        <div class="card" style="width: 18rem;margin-right: 20px;" onclick="myFunction('${data[index].name}')">
+          <img src="https://cdn.shopify.com/s/files/1/0559/0374/8185/files/howdoIbecomeateacherlaterinlife_691984306.jpg?v=1649211277" class="card-img-top" alt="...">
+          <div class="card-body" style="
+background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoI6XakKpd1Ke2w9f4-dQXdpdeBNa5KZrQTedWUJQb14SVpwxvrmZ2656O&s=10');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;">
+            <p class="card-text">${data[index].name}</p>
+            <p class="card-text">Language: ${data[index].lan}</p>
+            <p class="card-text">${data[index].duration}hrs</p>
+            <p class="card-text" id=${ind}
+          </div>
+        </div>
+      `;
+      document.getElementById(`c${idNo}`).innerHTML += newCardHtml;
+    }
+
+    // document.getElementById("JJJ").innerText = data[0].name;
+  })
+  .catch(error => {
+    // Handle errors
+    console.error('There was a problem with the fetch operation:', error);
+  });
+
+
+
+
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
